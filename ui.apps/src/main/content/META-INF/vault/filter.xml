@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/ugamsol/clientlibs"/>
+    <filter root="/apps/ugamsol/components"/>
+    <filter root="/apps/ugamsol/i18n"/>
+</workspaceFilter>
