@@ -1,0 +1,16 @@
+<sly data-sly-use.time="com.ugamsol.core.models.TimeLine"></sly>
+
+<section class="timeline pb-120">
+    <ul data-sly-list.item="${time.timeLineDetails}">
+        <li>
+            <div class="content" >
+                <img class="img-fluid mx-auto d-block mb-30" src="" alt="">
+                <h4>
+                    <time>${item.title}</time>
+                </h4>
+                <p>${item.year}</p>
+                <p>${item.result}</p>
+            </div>
+        </li>
+    </ul>
+</section>
