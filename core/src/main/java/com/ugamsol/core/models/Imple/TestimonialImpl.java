@@ -16,7 +16,7 @@ import javax.inject.Inject;
 @Exporter(name="jackson", extensions = "json", selector="test")
 public class TestimonialImpl implements Testimonial {
 
-    public static final String RESOURCE_TYPE = "/apps/ugamsol/components/content/testimonial";
+    public static final String RESOURCE_TYPE = "ugamsol/components/content/testimonial";
     @Inject
     String name;
     @Inject

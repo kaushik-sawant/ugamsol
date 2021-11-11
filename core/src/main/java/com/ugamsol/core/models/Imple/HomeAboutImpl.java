@@ -26,7 +26,7 @@ options = {
 public class HomeAboutImpl implements HomeAbout {
 
 
-    public static final String RESOURCE_TYPE = "/apps/ugamsol/components/content/homeabout";
+    public static final String RESOURCE_TYPE = "ugamsol/components/content/homeabout";
     @Inject
     String title;
     @Inject

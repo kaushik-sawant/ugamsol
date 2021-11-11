@@ -25,7 +25,7 @@ import java.util.Map;
 public class TimeLineImpl implements TimeLine{
     private static final Logger LOG = LoggerFactory.getLogger(TimeLineImpl.class);
 
-    public static final String RESOURCE_TYPE = "/apps/ugamsol/components/content/timeline";
+    public static final String RESOURCE_TYPE = "ugamsol/components/content/timeline";
 
     @ChildResource
     Resource timelinemultifield;
