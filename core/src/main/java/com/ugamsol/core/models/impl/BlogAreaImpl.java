@@ -1,6 +1,6 @@
-package com.ugamsol.core.models.Imple;
+package com.ugamsol.core.models.impl;
 
-import com.ugamsol.core.models.Service;
+import com.ugamsol.core.models.BlogArea;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -8,22 +8,29 @@ import org.apache.sling.models.annotations.Model;
 import javax.inject.Inject;
 
 @Model(adaptables = Resource.class,
-        adapters = Service.class,
+        adapters = BlogArea.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class serviceImple implements Service {
+public class BlogAreaImpl implements BlogArea {
     @Inject
-    String title;
+    String image;
+    @Inject
+    String heading1;
     @Inject
     String text;
 
 
     @Override
-    public String getServiceTitle() {
-        return title;
+    public String getImage() {
+        return image;
     }
 
     @Override
-    public String getServiceText() {
+    public String getHeading1() {
+        return heading1;
+    }
+
+    @Override
+    public String getText() {
         return text;
     }
 }

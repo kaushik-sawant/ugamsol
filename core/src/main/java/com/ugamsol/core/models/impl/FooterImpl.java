@@ -1,4 +1,4 @@
-package com.ugamsol.core.models.Imple;
+package com.ugamsol.core.models.impl;
 
 import com.ugamsol.core.models.Footer;
 import org.apache.sling.api.resource.Resource;

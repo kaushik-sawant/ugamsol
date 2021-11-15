@@ -1,14 +1,11 @@
-package com.ugamsol.core.models.Imple;
+package com.ugamsol.core.models.impl;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.ugamsol.core.models.HomeAbout;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Exporter;
-import org.apache.sling.models.annotations.ExporterOption;
-import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.*;
 
 import javax.inject.Inject;
 
@@ -17,11 +14,11 @@ import javax.inject.Inject;
         resourceType = HomeAboutImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
-@Exporter(name="jackson", extensions = "json", selector = "mydemo",
-options = {
-        @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value ="true")
-}
-)
+    @Exporter(name="jackson", extensions = "json", selector = "mydemo",
+        options = {
+            @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value ="true")
+        }
+    )
 @JsonRootName("NEW ROOT NAME")
 public class HomeAboutImpl implements HomeAbout {
 
