@@ -4,6 +4,7 @@ import com.ugamsol.core.models.TimeLine;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.slf4j.Logger;
@@ -17,10 +18,15 @@ import java.util.Map;
 @Model(
         adaptables = SlingHttpServletRequest.class,
         adapters = TimeLine.class,
-        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+        resourceType = TimeLineImpl.RESOURCE_TYPE
 )
+@Exporter(name="jackson", extensions = "json", selector = "Time")
 public class TimeLineImpl implements TimeLine{
     private static final Logger LOG = LoggerFactory.getLogger(TimeLineImpl.class);
+
+    public static final String RESOURCE_TYPE = "ugamsol/components/content/timeline";
+
     @ChildResource
     Resource timelinemultifield;
     @Override
