@@ -19,9 +19,6 @@ class BannerAreaImplTest {
 
     @BeforeEach
     void setUp() {
-
-        //aemContext.addModelsForClasses(BannerAreaImpl.class);
-        //aemContext.load().json(BannerAreaImpl.class.getResourceAsStream ("/com/ugamsol/core/models/impl/Banner.json"),  "/component");
         aemContext.load().json("/Banner.json", "/content");
     }
 

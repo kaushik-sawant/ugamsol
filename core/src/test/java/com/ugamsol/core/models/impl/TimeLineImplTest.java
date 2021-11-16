@@ -20,7 +20,6 @@ class TimeLineImplTest {
 
     @BeforeEach
     void setUp() {
-        //aemContext.addModelsForClasses(TimeLineImpl.class);
         aemContext.load().json("/Timeline.json", "/content");
     }
 

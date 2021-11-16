@@ -1,6 +1,5 @@
 package com.ugamsol.core.models.impl;
 
-import com.ugamsol.core.models.BannerArea;
 import com.ugamsol.core.models.Price;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -21,7 +20,6 @@ class PriceImplTest {
     @BeforeEach
     void setUp() {
         aemContext.addModelsForClasses(PriceImpl.class);
-        //aemContext.load().json(BannerAreaImpl.class.getResourceAsStream ("com/ugamsol/core/models/impl/Banner.json"),  "/component");
         aemContext.load().json("/Price.json", "/content");
 
     }
