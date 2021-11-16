@@ -1,7 +1,6 @@
-package com.ugamsol.core.models.Imple;
+package com.ugamsol.core.models.impl;
 
 import com.ugamsol.core.models.Brands;
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;

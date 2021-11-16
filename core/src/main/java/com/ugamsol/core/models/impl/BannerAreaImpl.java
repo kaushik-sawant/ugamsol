@@ -1,4 +1,4 @@
-package com.ugamsol.core.models.Imple;
+package com.ugamsol.core.models.impl;
 
 import com.ugamsol.core.models.BannerArea;
 import org.apache.sling.api.resource.Resource;
@@ -9,10 +9,11 @@ import javax.inject.Inject;
 
 @Model(adaptables = Resource.class,
         adapters = BannerArea.class,
+        resourceType = BannerAreaImpl.RESOURCE_TYPE,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
 public class BannerAreaImpl implements BannerArea {
-
+    final protected static String RESOURCE_TYPE="ugamsol/components/content/bannerarea";
     @Inject
     String name;
     @Inject
