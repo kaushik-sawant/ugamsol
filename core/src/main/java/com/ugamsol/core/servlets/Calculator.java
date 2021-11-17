@@ -13,7 +13,7 @@ import java.io.IOException;
 @SlingServletPaths(
         value = {"/bin/calc"}
 )
-public class calculator extends SlingAllMethodsServlet {
+public class Calculator extends SlingAllMethodsServlet {
 
     @Override
     protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp) throws IOException, IOException {
