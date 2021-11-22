@@ -28,10 +28,10 @@ class calculatorTest {
         MockSlingHttpServletRequest request = aemContext.request();
         MockSlingHttpServletResponse response = aemContext.response();
         Map<String, Object> parameterMap = new HashMap<String, Object>();
-        parameterMap.put("firstNumber", 11);
-        parameterMap.put("secondNumber", 11);
+        parameterMap.put("firstNumber", 45);
+        parameterMap.put("secondNumber", 40);
         request.setParameterMap(parameterMap);
         calculator.doGet(request, response);
-        assertEquals(22,Integer.parseInt(response.getOutputAsString()));
+        assertEquals(85,Integer.parseInt(response.getOutputAsString()));
     }
 }
