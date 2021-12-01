@@ -5,8 +5,8 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import com.ugamsol.core.models.ServiceUserList;
-import com.ugamsol.core.utils.ResolverUtil;
+import com.ugamsol.core.models.ServiceUsersList;
+import com.ugamsol.core.utils.ResolverUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -17,25 +17,23 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import org.apache.sling.api.resource.LoginException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Model(adaptables = SlingHttpServletRequest.class,
-        adapters = ServiceUserList.class,
+        adapters = ServiceUsersList.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ServiceUserListImpl implements ServiceUserList{
+public class ServiceUsersListImpl implements ServiceUsersList {
     @Inject
     private ResourceResolverFactory resourceResolverFactory;
 
-    final Logger LOG = LoggerFactory.getLogger(ServiceUserListImpl.class);
+    final Logger LOG = LoggerFactory.getLogger(ServiceUsersListImpl.class);
 
     @Inject
     QueryBuilder queryBuilder;
-    String listofuser = " ";
+    String listofusers = " ";
     @PostConstruct
     protected void init(){
         LOG.info("\n logs");
@@ -52,7 +50,7 @@ public class ServiceUserListImpl implements ServiceUserList{
         map.put("type", "rep:User");
         map.put("p.properties", "rep:principalName");
         try{
-            ResourceResolver serviceResourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
+            ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
 
             Session session = serviceResourceResolver.adaptTo(Session.class);
             Query userQuery = queryBuilder.createQuery(PredicateGroup.create(map), session);
@@ -60,12 +58,12 @@ public class ServiceUserListImpl implements ServiceUserList{
             List<Hit> Hits = result.getHits();
             for (Hit hit : Hits) {
 
-                listofuser = listofuser + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
+                listofusers = listofusers + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
             }
         } catch (Exception e) {
             LOG.info("error message",e.getMessage());
         }
-        return listofuser;
+        return listofusers;
     }
 
 }

@@ -7,8 +7,8 @@ import javax.security.auth.login.LoginException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ResolverUtil {
-    private ResolverUtil() {
+public class ResolverUtils {
+    private ResolverUtils() {
 
     }
 

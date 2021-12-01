@@ -1,5 +1,5 @@
 package com.ugamsol.core.models;
 
-public interface ServiceUserList {
+public interface ServiceUsersList {
     public String getUsersList();
 }
