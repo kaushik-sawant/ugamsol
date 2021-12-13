@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-12-13T10:35:47.173+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/ugamsol/settings/wcm/templates/custom-xf-template"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Portfolio"
+        sling:resourceType="ugamsol/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ugamsol/components/container"
+            layout="responsiveGrid">
+            <responsivegrid
+                jcr:created="{Date}2021-06-21T14:08:05.939+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2021-06-21T14:08:05.939+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+                <title_text
+                    cq:masterBuildingBlock="{Boolean}true"
+                    jcr:created="{Date}2021-06-22T12:00:30.806+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-12-09T11:11:44.316+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="buildingBlockPortfolio"
+                    sling:resourceType="cq/experience-fragments/editor/components/buildingblock">
+                    <title_text158740705743000
+                        jcr:lastModified="{Date}2021-06-22T16:41:17.148+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ugamsol/components/content/title-text"
+                        color="false"
+                        paddingbottom="false"
+                        sectiongap="true"
+                        text="Who are in extremely love with eco friendly system."
+                        title="Our Latest Featured Projects"/>
+                    <item158740710862400
+                        jcr:created="{Date}2021-06-22T12:01:08.784+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-12-13T10:35:46.797+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ugamsol/components/content/portfolioteaser"
+                        heading1="6d Vinyl Designsssssss"
+                        heading2="vector"
+                        image="/content/dam/ugamsol/p1.jpg">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="4"/>
+                        </cq:responsive>
+                    </item158740710862400>
+                    <item158740717837500
+                        jcr:created="{Date}2021-06-22T12:01:19.856+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-06-22T12:02:44.094+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ugamsol/components/content/portfolioteaser"
+                        heading1="2D Vinyl Design"
+                        heading2="vector"
+                        image="/content/dam/ugamsol/p2.jpg">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="4"/>
+                        </cq:responsive>
+                    </item158740717837500>
+                    <item158740727271300
+                        jcr:created="{Date}2021-06-22T12:01:25.474+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-06-22T12:03:08.716+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ugamsol/components/content/portfolioteaser"
+                        heading1="2D Vinyl Design"
+                        heading2="vector"
+                        image="/content/dam/ugamsol/p6.jpg">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="4"/>
+                        </cq:responsive>
+                    </item158740727271300>
+                </title_text>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>
