@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="77ee496a-169e-4820-bb20-4d0ce0d97d7a">
+    <jcr:content
+        cq:name="cf2"
+        cq:parentPath="/content/dam/content-fragment-ugam/en"
+        jcr:description=""
+        jcr:lastModified="{Date}2021-12-15T13:17:19.509+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="CF2"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-12-15T13:17:19.510+05:30">
+        <data
+            cq:model="/conf/ugamsol/settings/dam/cfm/models/contentfragmentugam"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                bio="&lt;p>CF2&lt;/p>&#xa;"
+                bio_x0040_ContentType="text/html"
+                bio_x0040_LastModified="{Date}2021-12-15T13:17:19.340+05:30"
+                checkmark="{Boolean}true"
+                checkmark_x0040_LastModified="{Date}2021-12-15T13:17:19.341+05:30"
+                name="CF2"
+                name_x0040_LastModified="{Date}2021-12-15T13:17:19.338+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
