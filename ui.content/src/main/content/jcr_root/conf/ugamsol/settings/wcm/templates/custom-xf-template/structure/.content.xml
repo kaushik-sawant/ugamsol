@@ -16,7 +16,7 @@
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
                     jcr:primaryType="nt:unstructured"
-                    title="Smaller Screen"
+                    title="Smaller  Screen"
                     width="{Long}768"/>
                 <tablet
                     jcr:primaryType="nt:unstructured"
