@@ -23,6 +23,6 @@ public @interface SchedulerConf {
             name = "Cron",
             description = "scheduler cron expression",
             type = AttributeType.STRING)
-    public String cronExpression() default "0/10 * * * * ?";
+    public String cronExpression() default "0 0 23 1/1 * ? *";
 
 }
