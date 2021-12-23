@@ -2,6 +2,7 @@ package com.ugamsol.core.models.impl;
 
 import com.day.cq.commons.date.DateUtil;
 import com.day.cq.replication.*;
+import com.ugamsol.core.models.AddProperty;
 import org.apache.sling.api.resource.*;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -25,7 +26,8 @@ public class MyPreprocessorImpl implements Preprocessor {
     ResourceResolverFactory resourceResolverFactory;
     @Reference
     Replicator replicator;
-
+    @Reference
+    AddProperty addProperty;
     @Override
     public void preprocess(ReplicationAction replicationAction, ReplicationOptions replicationOptions) throws ReplicationException {
         LOG.info("\nInside Method");
@@ -34,7 +36,7 @@ public class MyPreprocessorImpl implements Preprocessor {
         }
         String path = replicationAction.getPath();
         if (path.equals("/content/ugamsol/us/en/home-page")) {
-            LOG.debug("\npath equal");
+            LOG.debug("\n home page path");
 
             try {
                 ResourceResolver resourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
@@ -52,7 +54,7 @@ public class MyPreprocessorImpl implements Preprocessor {
                     LOG.info("Page Activated");
                 } else {
                     LOG.info("\nInside Else");
-                    node.setProperty("time", DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
+                   addProperty.doAWriteOperation();
                     replicator.replicate(session, ReplicationActionType.ACTIVATE, "/content/ugamsol/us/en/home-page");
                     session.save();
                     session.logout();
