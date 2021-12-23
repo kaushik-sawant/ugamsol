@@ -1,5 +1,5 @@
 package com.ugamsol.core.models;
 
 public interface AddProperty {
-    public void doAWriteOperation();
+    public String doAWriteOperation(String path);
 }
