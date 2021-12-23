@@ -27,13 +27,15 @@ public class AddPropertyImpl implements AddProperty{
     private static final Logger LOG = LoggerFactory.getLogger(AddPropertyImpl.class);
     @Reference
     ResourceResolverFactory resourceResolverFactory;
+
+    String path = "/content/ugamsol/us/en/home-page/jcr:content/root/responsivegrid_786455242/displaydate";
     @Override
-    public void doAWriteOperation() {
+    public String doAWriteOperation(String path) {
         try{
 
             ResourceResolver serviceResourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
             Session session = serviceResourceResolver.adaptTo(Session.class);
-            Resource resource = serviceResourceResolver.getResource("/content/ugamsol/us/en/home-page/jcr:content/root/responsivegrid_786455242/displaydate");
+            Resource resource = serviceResourceResolver.getResource(path);
             Node node = resource.adaptTo(Node.class);
             node.setProperty("time" , DateUtil.parseISO8601(DateUtil.getISO8601Date(Calendar.getInstance())));
             session.save();
@@ -41,5 +43,6 @@ public class AddPropertyImpl implements AddProperty{
         } catch (Exception e) {
             LOG.info(e.getMessage());
         }
+        return path;
     }
 }

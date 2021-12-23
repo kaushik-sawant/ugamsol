@@ -28,6 +28,7 @@ public class MyPreprocessorImpl implements Preprocessor {
     Replicator replicator;
     @Reference
     AddProperty addProperty;
+    String path1 = "/content/ugamsol/us/en/home-page/jcr:content/root/responsivegrid_786455242/displaydate";
     @Override
     public void preprocess(ReplicationAction replicationAction, ReplicationOptions replicationOptions) throws ReplicationException {
         LOG.info("\nInside Method");
@@ -41,7 +42,7 @@ public class MyPreprocessorImpl implements Preprocessor {
             try {
                 ResourceResolver resourceResolver = ResolverUtils.newResolver(resourceResolverFactory);
                 Session session = resourceResolver.adaptTo(Session.class);
-                Resource resource = resourceResolver.getResource("/content/ugamsol/us/en/home-page/jcr:content/root/responsivegrid_786455242/displaydate");
+                Resource resource = resourceResolver.getResource(path1);
                 Node node = resource.adaptTo(Node.class);
                 LOG.info("\n after node");
                 //Calendar date = (Calendar)node.getProperty("date");
@@ -54,7 +55,7 @@ public class MyPreprocessorImpl implements Preprocessor {
                     LOG.info("Page Activated");
                 } else {
                     LOG.info("\nInside Else");
-                   addProperty.doAWriteOperation();
+                   addProperty.doAWriteOperation(path1);
                     replicator.replicate(session, ReplicationActionType.ACTIVATE, "/content/ugamsol/us/en/home-page");
                     session.save();
                     session.logout();

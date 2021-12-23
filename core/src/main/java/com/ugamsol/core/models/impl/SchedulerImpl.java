@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 public class SchedulerImpl implements Runnable {
     private static final Logger LOG = LoggerFactory.getLogger(SchedulerImpl.class);
     private int schedulerId;
-
+    String path = "/content/ugamsol/us/en/home-page/jcr:content/root/responsivegrid_786455242/displaydate";
     @Reference
     private Scheduler schedulerConf;
 
@@ -53,7 +53,7 @@ public class SchedulerImpl implements Runnable {
     }
     public void run() {
         LOG.info("\n run method executing");
-        addProperty.doAWriteOperation();
+        addProperty.doAWriteOperation(path);
     }
 }
 
