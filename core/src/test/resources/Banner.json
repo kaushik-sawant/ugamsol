@@ -1,10 +1,9 @@
 {
     "banner": {
-        "name": "About Me",
+        "name": "About Mee",
         "path": "/content/ugamsol/us/en/home-page",
         "link1": "Home",
-        "link2": "About Me",
-        "jcr:lastModified": "Fri Jun 18 2021 11:25:18 GMT+0530",
-        "sling:resourceType": "ugamsol/components/content/bannernavigation"
+        "link2": "About Me"
     }
 }
+

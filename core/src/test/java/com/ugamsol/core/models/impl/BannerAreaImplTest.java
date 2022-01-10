@@ -26,7 +26,7 @@ class BannerAreaImplTest {
     void getBannerName() {
         Resource json = aemContext.currentResource("/content/banner");
         BannerArea bannerarea = json.adaptTo(BannerArea.class);
-        assertEquals("About Me", bannerarea.getBannerName());
+        assertEquals("About Mee", bannerarea.getBannerName());
     }
 
     @Test
