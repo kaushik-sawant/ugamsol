@@ -10,7 +10,7 @@ import javax.inject.Inject;
 @Model(adaptables = Resource.class,
         adapters = Service.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class serviceImple implements Service {
+public class ServiceImple implements Service {
     @Inject
     String title;
     @Inject

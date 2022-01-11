@@ -13,7 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 
-class serviceImpleTest {
+class ServiceImpleTest {
     private final AemContext aemContext = new AemContext();
     private Service service;
 

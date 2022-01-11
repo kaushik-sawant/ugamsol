@@ -5,4 +5,5 @@ import java.util.Map;
 
 public interface Testimonialmulti {
     List<Map<String,String>> getTestimonialDetails();
+
 }

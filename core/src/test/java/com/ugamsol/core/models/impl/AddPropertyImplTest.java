@@ -12,8 +12,4 @@ class AddPropertyImplTest {
 
     }
 
-    @Test
-    void doAWriteOperation() {
-
-    }
 }

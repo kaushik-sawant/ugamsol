@@ -16,7 +16,7 @@ import java.io.IOException;
 public class Calculator extends SlingAllMethodsServlet {
 
     @Override
-    protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp) throws IOException, IOException {
+    protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp) throws IOException {
         int firstNumber = Integer.parseInt(req.getParameter("firstNumber"));
         int secondNumber = Integer.parseInt(req.getParameter("secondNumber"));
         int answer = firstNumber+secondNumber;

@@ -13,7 +13,7 @@ import javax.inject.Inject;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
 public class BannerAreaImpl implements BannerArea {
-    final protected static String RESOURCE_TYPE="ugamsol/components/content/bannerarea";
+    protected static final String RESOURCE_TYPE="ugamsol/components/content/bannerarea";
     @Inject
     String name;
     @Inject

@@ -29,14 +29,14 @@ public class ServiceUsersListImpl implements ServiceUsersList {
     @Inject
     private ResourceResolverFactory resourceResolverFactory;
 
-    final Logger LOG = LoggerFactory.getLogger(ServiceUsersListImpl.class);
+    final Logger log = LoggerFactory.getLogger(ServiceUsersListImpl.class);
 
     @Inject
     QueryBuilder queryBuilder;
     String listofusers = " ";
     @PostConstruct
     protected void init(){
-        LOG.info("\n logs");
+        log.info("\n logs");
     }
 
     @Override
@@ -61,7 +61,7 @@ public class ServiceUsersListImpl implements ServiceUsersList {
                 listofusers = listofusers + "\r\n" + hit.getProperties().get("rep:principalName", String.class);
             }
         } catch (Exception e) {
-            LOG.info("error message",e.getMessage());
+           e.getStackTrace();
         }
         return listofusers;
     }

@@ -6,7 +6,6 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -49,7 +48,6 @@ public class UserListImpl implements UserList {
         map.put("type", "rep:User");
 
         try {
-
             Session session = resolver.adaptTo(Session.class);
             Query listQuery = queryBuilder.createQuery(PredicateGroup.create(map), session);
             SearchResult result = listQuery.getResult();
@@ -60,7 +58,7 @@ public class UserListImpl implements UserList {
             }
 
         }catch(Exception e){
-            LOG.info("\n exception",e.getMessage());
+            e.getStackTrace();
         }
         return listofusers;
     }

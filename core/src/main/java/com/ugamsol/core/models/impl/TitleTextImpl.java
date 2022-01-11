@@ -43,10 +43,10 @@ public class TitleTextImpl implements TitleText {
         return sectiongap;
     }
 
-    @Override
+    /*@Override
     public Boolean getColor() {
         return color;
-    }
+    }*/
 
 
 }

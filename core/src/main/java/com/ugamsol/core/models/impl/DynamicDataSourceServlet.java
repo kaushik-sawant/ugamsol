@@ -6,7 +6,6 @@ import com.adobe.granite.ui.components.ds.ValueMapResource;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
 import com.day.cq.dam.commons.util.DamUtil;
-import com.ugamsol.core.servlets.DropDown;
 import org.apache.commons.collections4.Transformer;
 import org.apache.commons.collections4.iterators.TransformIterator;
 import org.apache.jackrabbit.JcrConstants;
@@ -20,7 +19,6 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.api.wrappers.ValueMapDecorator;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,10 +32,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
-
-import static com.adobe.cq.wcm.core.components.internal.models.v1.CarouselImpl.RESOURCE_TYPE;
 import static com.ugamsol.core.models.impl.AppConstants.*;
-import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_RESOURCE_TYPES;
+
 
 
 @Component(
@@ -106,12 +102,10 @@ public class DynamicDataSourceServlet extends SlingSafeMethodsServlet{
 
     private Resource getJsonResource(ResourceResolver resourceResolver, String dropdownSelector) {
         Resource jsonResource;
-        switch (dropdownSelector) {
-            case COUNTRY_LIST:
-                jsonResource = resourceResolver.getResource(COUNTRY_LIST_PATH);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + dropdownSelector);
+        if (COUNTRY_LIST.equals(dropdownSelector)) {
+            jsonResource = resourceResolver.getResource(COUNTRY_LIST_PATH);
+        } else {
+            throw new IllegalStateException("Unexpected value: " + dropdownSelector);
         }
         return jsonResource;
     }

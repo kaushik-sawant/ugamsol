@@ -4,7 +4,6 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
@@ -26,7 +25,7 @@ public class ResourceType extends SlingSafeMethodsServlet {
 
         final ResourceResolver resourceResolver = request.getResourceResolver();
         Page page = resourceResolver.adaptTo(PageManager.class).getPage("/content/ugamsol/us/en");
-        List children = new ArrayList();
+        List<Object> children = new ArrayList<>();
         Iterator<Page> allpages = page.listChildren();
         while (allpages.hasNext()) {
             Page childPage = allpages.next();
