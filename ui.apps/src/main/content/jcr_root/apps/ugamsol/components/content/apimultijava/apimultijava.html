@@ -1,0 +1,17 @@
+<div>asd</div>
+<div data-sly-use.singleuser="com.ugamsol.core.models.ApiMulti"></div>
+  <h3 hidden>${singleuser.url}</h3>
+  <div class="list-container" data-sly-list.iterate=${singleuser.memberList}>
+
+
+        <div class="card-container">
+        	<img src="${iterate.image}"/>
+
+            	<p>${iterate.firstname}</p>
+            	<p>${iterate.lastname}</p>
+            	<p>${iterate.email}</p>
+        	
+		</div>
+   </div>
+
+
