@@ -1,10 +1,12 @@
 package com.ugamsol.core.models.impl;
 
 import com.ugamsol.core.models.ApiMulti;
+import com.ugamsol.core.models.OsgiApiUserList;
 import com.ugamsol.core.utils.Network;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,6 +25,9 @@ public class ApiMultiImpl implements ApiMulti {
 
     @Inject
     String pageNo;
+
+    @OSGiService
+    OsgiApiUserList osgiApiUserList;
 
     @Override
     public List<Map<String, String>> getMemberList() throws JSONException, IOException {
@@ -48,6 +53,6 @@ public class ApiMultiImpl implements ApiMulti {
 
     @Override
     public String getUrl() {
-        return "https://reqres.in/api/users?page="+pageNo;
+        return osgiApiUserList.getMultiUser()+pageNo;
     }
 }
